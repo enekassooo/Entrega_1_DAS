@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Final_1</string>
+    <string name="id_esp">Español</string>
+    <string name="id_fr">Frances</string>
+    <string name="id_ing">Ingles</string>
+    <string name="id_listaCompra">Lista Compra</string>
+    <string name="id_btn_eliminar">eliminar</string>
+    <string name="id_anadir">Añadir</string>
+    <string name="id_nombre_prod">Nombre del producto</string>
+    <string name="id_coste_prd">Coste producto</string>
+    <string name="id_num_uds">Numero unidades</string>
+    <string name="id_añadir_producto">Añadir Producto</string>
+    <string name="id_cancelar">Cancelar</string>
+</resources>

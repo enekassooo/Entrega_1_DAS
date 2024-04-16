@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Final_1</string>
+    <string name="id_esp">Spanish</string>
+    <string name="id_fr">French</string>
+    <string name="id_ing">English</string>
+    <string name="id_listaCompra">Shopping List</string>
+    <string name="id_btn_eliminar">delete</string>
+    <string name="id_anadir">Add</string>
+    <string name="id_nombre_prod">Product Name</string>
+    <string name="id_coste_prd">Product Cost</string>
+    <string name="id_num_uds">Number of Units</string>
+    <string name="id_añadir_producto">Add Product</string>
+    <string name="id_cancelar">Cancel</string>
+</resources>

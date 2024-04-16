@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Barra de título -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="174dp"
+        android:gravity="center"
+        android:text="ShopList"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="italic"
+        android:textColor="@android:color/black"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@android:color/holo_blue_dark"/>
+
+
+    <!-- Contenedor de botones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:paddingVertical="70dp">
+
+        <!-- Botón Productos -->
+        <Button
+            android:id="@+id/buttonListaProd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/id_listaCompra"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+    <!-- Contenedor de botones de idioma -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <!-- Botón para seleccionar el idioma español -->
+        <Button
+            android:id="@+id/buttonSpanish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/id_esp"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp"/>
+
+        <!-- Botón para seleccionar el idioma francés -->
+        <Button
+            android:id="@+id/buttonFrench"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/id_fr"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp"/>
+
+        <!-- Botón para seleccionar el idioma inglés -->
+        <Button
+            android:id="@+id/buttonEnglish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/id_ing"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</LinearLayout>

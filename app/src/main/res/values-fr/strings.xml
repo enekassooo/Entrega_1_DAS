@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Final_1</string>
+    <string name="id_esp">Espagnol</string>
+    <string name="id_fr">Français</string>
+    <string name="id_ing">Anglais</string>
+    <string name="id_listaCompra">Liste d\'achats</string>
+    <string name="id_btn_eliminar">supprimer</string>
+    <string name="id_anadir">Ajouter</string>
+    <string name="id_nombre_prod">Nom du produit</string>
+    <string name="id_coste_prd">Coût du produit</string>
+    <string name="id_num_uds">Nombre d\'unités</string>
+    <string name="id_añadir_producto">Ajouter un Produit</string>
+    <string name="id_cancelar">Annuler</string>
+</resources>
