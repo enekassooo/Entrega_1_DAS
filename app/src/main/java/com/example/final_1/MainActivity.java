@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 
-        Intent intent = new Intent(MainActivity.this, Menu.class);
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 }
