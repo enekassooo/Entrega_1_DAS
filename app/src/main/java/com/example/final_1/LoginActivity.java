@@ -19,8 +19,13 @@ import android.util.Log;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -39,6 +44,18 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            return;
+                        }
+                        String token = task.getResult();
+                        Log.d("Token", token);
+                    }
+                });
 
         // Botón para iniciar sesión
         Button buttonLogin = findViewById(R.id.buttonIniciarSesion);
@@ -149,6 +166,8 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean autenticado) {
             if (autenticado) {
+                // Hacer la llamada HTTP a la URL después de la autenticación
+                new HacerLlamadaHttp().execute("http://34.121.132.31:81/notif_Fcm.php");
                 String idioma = "es"; // O el idioma que corresponda
                 Log.d("Usuario", usu_1);
                 // Si el usuario está autenticado, iniciar la actividad del menú
@@ -261,6 +280,40 @@ public class LoginActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             return null;
+        }
+    }
+
+    // AsyncTask para hacer la llamada HTTP a la URL especificada
+    private static class HacerLlamadaHttp extends AsyncTask<String, Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(String... urls) {
+            try {
+                String url = urls[0];
+                HttpURLConnection conexion = (HttpURLConnection) new URL(url).openConnection();
+                conexion.setRequestMethod("POST");
+                conexion.setDoOutput(true);
+
+                try (OutputStream outputStream = conexion.getOutputStream()) {
+                    String parametros = "usuario=ejemplo"; // Cambiar por el nombre de usuario o parámetros necesarios
+                    outputStream.write(parametros.getBytes(StandardCharsets.UTF_8));
+                    outputStream.flush();
+                }
+
+                // Obtener la respuesta HTTP
+                int responseCode = conexion.getResponseCode();
+                return responseCode == HttpURLConnection.HTTP_OK;
+
+            } catch (Exception e) {
+                Log.e("LlamadaHttp", "Error al realizar la llamada HTTP: " + e.getMessage());
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Boolean resultado) {
+            if (!resultado) {
+                Log.e("LlamadaHttp", "Error al realizar la llamada HTTP");
+            }
         }
     }
 }
