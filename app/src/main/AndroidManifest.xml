@@ -42,7 +42,8 @@
         </activity>
 
         <activity android:name=".ListaProductos"/>
-        <activity android:name=".Menu"/>
+
+        <activity android:name=".Menu" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

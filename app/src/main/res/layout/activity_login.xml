@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".LoginActivity">
+
+    <!-- Título de la app -->
+    <TextView
+        android:id="@+id/textViewAppTitle"
+        android:layout_width="match_parent"
+        android:layout_height="174dp"
+        android:gravity="center"
+        android:text="ShopList"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="italic|bold"
+        android:textColor="@android:color/black"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/holo_blue_dark"/>
+
+    <!-- Título "Iniciar sesión" -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar sesión"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewAppTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- EditText para el usuario -->
+    <EditText
+        android:id="@+id/editTextUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usuario"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="16dp"/>
+
+    <!-- EditText para la contraseña -->
+    <EditText
+        android:id="@+id/editTextContrasena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_below="@id/editTextUsuario"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Botón de iniciar sesión -->
+    <Button
+        android:id="@+id/buttonIniciarSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar sesión"
+        android:layout_below="@id/editTextContrasena"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Botón de registrarme -->
+    <Button
+        android:id="@+id/buttonRegistrarme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrarme"
+        android:layout_below="@id/buttonIniciarSesion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <!-- ImageView para mostrar la imagen capturada -->
+    <ImageView
+        android:id="@+id/imageViewCapturedImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/buttonRegistrarme"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+    />
+
+</RelativeLayout>

@@ -19,6 +19,28 @@
         android:paddingBottom="20dp"
         android:background="@android:color/holo_blue_dark"/>
 
+    <!-- ImageView para mostrar la imagen capturada -->
+    <ImageView
+        android:id="@+id/imageViewFoto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_below="@id/textViewTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        />
+
+    <!-- Nuevo TextView debajo del ImageView -->
+    <TextView
+        android:id="@+id/textViewFotoDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Descripción de la imagen"
+        android:textSize="18sp"
+        android:textStyle="italic"/>
 
     <!-- Contenedor de botones -->
     <LinearLayout
