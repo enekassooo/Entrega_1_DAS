@@ -118,7 +118,7 @@ public class LoginActivity extends AppCompatActivity {
         usu_1 = usuario;
 
         // Enviar solicitud al servidor para verificar la autenticación
-        String url = "http://34.121.132.31:81/verificar_login.php"; // URL del script para verificar la autenticación
+        String url = "http://34.28.249.48:81/verificar_login.php"; // URL del script para verificar la autenticación
         String parametros = "usuario=" + Uri.encode(usuario) + "&contrasena=" + Uri.encode(contrasena);
 
         // Ejecutar la tarea asíncrona para enviar la solicitud
@@ -167,7 +167,7 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(Boolean autenticado) {
             if (autenticado) {
                 // Hacer la llamada HTTP a la URL después de la autenticación
-                new HacerLlamadaHttp().execute("http://34.121.132.31:81/notif_Fcm.php");
+                new HacerLlamadaHttp().execute("http://34.28.249.48:81/notif_Fcm.php");
                 String idioma = "es"; // O el idioma que corresponda
                 Log.d("Usuario", usu_1);
                 // Si el usuario está autenticado, iniciar la actividad del menú
@@ -233,7 +233,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void guardarDatosUsuario(String usuario, String contrasena, String foto) {
         // URL de tu archivo PHP en el servidor
-        String url = "http://34.121.132.31:81/procesar_registro.php";
+        String url = "http://34.28.249.48:81/procesar_registro.php";
 
 
         // Dentro del método enviarDatos()

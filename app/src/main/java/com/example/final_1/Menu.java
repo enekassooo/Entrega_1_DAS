@@ -144,7 +144,7 @@ public class Menu extends AppCompatActivity {
         textViewUser.setText("Usuario: " + nombre);
 
         // URL del script para recuperar la imagen
-        String url = "http://34.121.132.31:81/devolver_image.php"; // URL del script para recuperar la imagen
+        String url = "http://34.28.249.48:81/devolver_image.php"; // URL del script para recuperar la imagen
         String parametros = "usuario=" + Uri.encode(nombre);
         Log.d("Datos enviados", parametros);
 
